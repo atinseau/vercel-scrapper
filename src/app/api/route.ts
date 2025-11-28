@@ -23,9 +23,13 @@ export async function GET(request: Request) {
   await page.goto("https://example.com");
 
   const screenshotBuffer = await page.screenshot();
-  fs.writeFileSync("screenshot.png", screenshotBuffer);
 
   await browser.close();
 
-  return new Response(JSON.stringify({ message: "Hello from the API route!" }));
+  return new Response(Buffer.from(screenshotBuffer), {
+    status: 200,
+    headers: {
+      "Content-Type": "image/png",
+    },
+  });
 }
