@@ -1,6 +1,5 @@
-import Chromium from "@sparticuz/chromium";
+import chromium from "@sparticuz/chromium-min";
 import puppeteer from "puppeteer-core";
-import fs from "fs";
 import { getPuppeteerExecutablePath } from "@/src/lib/functions";
 
 export async function GET(request: Request) {
@@ -14,7 +13,7 @@ export async function GET(request: Request) {
   };
 
   const browser = await puppeteer.launch({
-    args: Chromium.args,
+    args: chromium.args,
     defaultViewport: viewport,
     executablePath: await getPuppeteerExecutablePath()
   });
