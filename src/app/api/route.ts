@@ -1,3 +1,6 @@
+import "puppeteer-core";
+import "@sparticuz/chromium-min";
+
 import chromium from "@sparticuz/chromium-min";
 import puppeteer from "puppeteer-core";
 import { getPuppeteerExecutablePath } from "@/src/lib/functions";
