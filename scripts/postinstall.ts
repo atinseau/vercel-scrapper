@@ -43,7 +43,7 @@ async function main() {
 
     console.log("✅ Chromium archive created successfully!");
   } catch (error) {
-    console.error("❌ Failed to create chromium archive:", error.message);
+    console.error("❌ Failed to create chromium archive:", error);
     console.log("⚠️  This is not critical for local development");
     process.exit(0); // Don't fail the install
   }
